@@ -1,4 +1,4 @@
 #class coin
-word = "Ordet"
+word = "Elefant"
 print(f"test {word} dette er et ord")
 
