@@ -1,0 +1,22 @@
+coin
+
+tx
+	new owner public key
+	hash of previous tx
+	current owner signature (encrypt "BITCOIN" with private key, verify by decrypting using public key) both know the answer
+
+block
+	hash of previous block
+	random number
+	all tx
+
+new_block = hash current block, increment nonce until hash starts with 000000
+
+
+network
+	new transactions broadcasted
+	each node adds transaction to block
+	each node hashes (new block)
+	node broadcast if new block = true
+	nodes accept if all tx in block
+	nodes discard work of existing block, accepts new block and start new_block on it
