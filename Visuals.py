@@ -1,4 +1,5 @@
 import tkinter as tk
+from hash import hasher
 
 #Creating Tk() object
 m = tk.Tk()
@@ -14,8 +15,8 @@ btn_hash.pack(pady=20)
 
 #Label hash
 lbl_hash = tk.Label(m,
-    text="Hash kommer her",
-    font=("Arial",25))
+    text=hasher.hash("Test hash"),
+    font=("Arial",14))
 lbl_hash.pack(pady=20)
 
 #Execute
