@@ -7,16 +7,28 @@ m = tk.Tk()
 m.title("Hasher")
 m.geometry("400x200")
 
-
-#Button hash
-btn_hash = tk.Button(m,text="Create hash",width=25,command=m.destroy)
-btn_hash.pack(pady=20)
-
+def print_hash():
+    lbl_hash.config(text=txtbox_input.get("1.0",'end-1c') + " = " + hasher.hash(txtbox_input.get("1.0",'end-1c')))
 
 #Label hash
 lbl_hash = tk.Label(m,
-    text=hasher.hash("Test hash"),
-    font=("Arial",14))
+    text="",
+    font=("Arial",10))
+
+#Button hash
+btn_hash = tk.Button(m,text="Create hash",
+    width=25,
+    command=print_hash)
+
+#Input hash Textbox
+txtbox_input = tk.Text(m,
+     width=25,
+     height=1)
+
+
+#Pack everything
+txtbox_input.pack(pady=20)
+btn_hash.pack(pady=20)
 lbl_hash.pack(pady=20)
 
 #Execute
